@@ -263,10 +263,10 @@ export async function Login(req, res, next) {
     
 
 
-    res.cookie('jwt', token, { httpOnly: true,sameSite: 'None', secure: true,  maxAge:86400000, path: '/', domain:'https://hub6.vercel.app' });
-    res.cookie('id', user._id, { httpOnly: true,sameSite: 'None', secure: true,  maxAge: 1296000000,path: '/', domain:'https://hub6.vercel.app' });
+    res.cookie('jwt', token, { httpOnly: true,sameSite: 'None', secure: true,  maxAge:86400000, path: '/', domain:'.hub6.vercel.app' });
+    res.cookie('id', user._id, { httpOnly: true,sameSite: 'None', secure: true,  maxAge: 1296000000,path: '/', domain:'.hub6.vercel.app' });
 
-    res.cookie('rjwt',refreshToken,{httpOnly:true, sameSite: 'None', secure: true,  maxAge: 1296000000,path:'/',domain:'https://hub6.vercel.app'})
+    res.cookie('rjwt',refreshToken,{httpOnly:true, sameSite: 'None', secure: true,  maxAge: 1296000000,path:'/',domain:'.hub6.vercel.app'})
     
    
 
