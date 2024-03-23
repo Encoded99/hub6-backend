@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  db:
+    image: mongodb/mongodb-community-server:6.0.5-ubuntu2204
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=root
+      - MONGODB_INITDB_ROOT_PASSWORD=Password
+      - MONGO_INITDB_DATABASE=tickets
+    volumes:
+      - tickets:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  tickets:

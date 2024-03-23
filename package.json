@@ -1,0 +1,43 @@
+{
+  "name": "hub6",
+  "version": "1.0.0",
+  "description": "consumer products api",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "nodemon app.js",
+    "build": "echo 'No build steps needed for this project'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.0",
+    "axios": "^1.6.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cloudinary": "^1.41.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "iplocate": "^1.0.7",
+    "isolated-vm": "^4.6.0",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.0",
+    "multer": "^1.4.5-lts.1",
+    "node-iplocate": "^1.0.3",
+    "nodemailer": "^6.9.7",
+    "nodemon": "^3.0.1",
+    "public-ip": "^6.0.1",
+    "puppeteer": "^21.5.0",
+    "redis": "^4.6.10",
+    "slugify": "^1.6.6",
+    "winston": "^3.11.0"
+  }
+}
