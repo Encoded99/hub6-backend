@@ -3,11 +3,9 @@ import { config } from 'dotenv'
 
 config()
 
-const hosted=process.env.URI
-const local=process.env.LOCAL_URI
-const uri=hosted
+
 const Conn = mongoose
-  .connect(uri, {
+  .connect(process.env.URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
