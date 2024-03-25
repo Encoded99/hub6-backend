@@ -723,18 +723,16 @@ export const userLogOut= async(req,res,)=>{
 
   
 
-   res.clearCookie('jwt').clearCookie('rjwt').clearCookie('id').send();
+   return res.status(200).clearCookie('jwt').clearCookie('rjwt').clearCookie('id').send();
 
-
-
-
-  return  res.status(200).send('log out sucessfully')
 
 
   }
 
   catch(err){
-    res.status(500).send('internal access error')
+
+    console.log('error from log out',err);
+   return res.status(500).send('internal access error')
   }
   
 
