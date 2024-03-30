@@ -557,7 +557,7 @@ export const forgotPassWord=async(req,res)=>{
     const EmailExist= await User.findOne({email:data.email})
     
       if(!EmailExist){
-        res.status(400).send('this email is not associated to any user in our data-base')
+   return   res.status(400).send('this email is not associated to any user in our data-base')
       }
       const token = generateString()
 
@@ -632,7 +632,7 @@ const config = {
   },
 };
 
-const resp= await axios.post(url,JSON.stringify(body),config)
+const response= await axios.post(url,JSON.stringify(body),config)
  
 
 
@@ -640,7 +640,7 @@ const resp= await axios.post(url,JSON.stringify(body),config)
      
     Msg(
       res,
-      { message: 'A link has been sent to your email, kindly  check your email for verification link' },
+      { message: `${response}` },
       'registered',
       201
     ) 
@@ -652,7 +652,7 @@ const resp= await axios.post(url,JSON.stringify(body),config)
   catch(err){
       console.log(err,'error from sending email');
      
-      res.status(500).send('internal server error')
+    return  res.status(500).send('internal server error')
   }
 }
 
