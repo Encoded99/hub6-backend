@@ -546,7 +546,7 @@ return   res.status(200).json({success:true,message:'email verified, your accoun
 
 export const forgotPassWord=async(req,res)=>{
    
-
+return res.status(201).send('forgot password endpoint hit')
 
   try{
 
