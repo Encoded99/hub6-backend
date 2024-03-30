@@ -48,11 +48,15 @@ cloudinary.config({
 
 
 export async function signUpEmailPassword(req, res, next) {
+
   const conn = await Conn
   const session = await conn.startSession()
   try {
     session.startTransaction()
     const data = req.body
+
+    console.log(data,'data')
+
     const { error } = registerValidation(data)
     if (error) throw new Exception(error.details[0].message, 400)
     const isEmailExist = await User.findOne({
@@ -546,6 +550,8 @@ export const forgotPassWord=async(req,res)=>{
 
   try{
 
+    console.log('forgot password hit');
+
     const data=req.body
    
     const EmailExist= await User.findOne({email:data.email})
@@ -644,7 +650,7 @@ const resp= await axios.post(url,JSON.stringify(body),config)
   }
 
   catch(err){
-      
+      console.log(err,'error from sending email');
      
       res.status(500).send('internal server error')
   }
