@@ -561,6 +561,8 @@ export const forgotPassWord=async(req,res)=>{
       }
       const token = generateString()
 
+      return res.status(201).send('forgot password hit');
+
       const body = {
         sender:{  
           name:"hub6",
@@ -619,7 +621,7 @@ export const forgotPassWord=async(req,res)=>{
      
       const cache = await setCache(token, { token, email: data.email }, 900)
 
-      return res.status(201).send('forgot password hit');
+     
 
 
 const url='https://api.brevo.com/v3/smtp/email'
