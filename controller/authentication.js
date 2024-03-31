@@ -561,7 +561,7 @@ export const forgotPassWord=async(req,res)=>{
       }
       const token = generateString()
 
-      return res.status(201).send('forgot password hit');
+      
 
       const body = {
         sender:{  
@@ -645,12 +645,7 @@ if (response.status !== 201) {
 
     //  await sendMail(body)
      
-    Msg(
-      res,
-      { message: `${response}` },
-      'registered',
-      201
-    ) 
+    return res.status(201).send(response);
 
      
 
